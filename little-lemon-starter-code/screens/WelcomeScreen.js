@@ -7,7 +7,7 @@ export default function WelcomeScreen({ navigation }) {
       <Image source={require('../assets/little-lemon-logo.png')} style={styles.mainLogo} />
       <Text style={styles.headerText}>Little Lemon, your local</Text>
       <Text style={styles.headerText}>Mediterranean Bistro</Text>
-      <Pressable style={styles.button}><Text>Newsletter</Text></Pressable>
+      <Pressable style={styles.button} onPress={() => navigation.navigate("Subscribe")}><Text style={styles.buttonText}>Newsletter</Text></Pressable>
     </View>
   );
 };
@@ -18,11 +18,11 @@ const styles = StyleSheet.create(
       flex: 1,
       backgroundColor: '#fff',
       alignItems: 'center',
-      justifyContent: 'center',
     },
     mainLogo: {
       height: 200,
       width: 200,
+      marginTop: "45%",
       marginBottom: 50,
       resizeMode: 'contain',
     },
@@ -32,13 +32,18 @@ const styles = StyleSheet.create(
       textAlign: 'center',
     },
     button: {
-      backgroundColor: '#4173D2',
       padding: 10,
       borderRadius: 5,
-      margin: 10,
-      width: '90%',
+      width: "90%",
+      marginTop: '40%',
+      backgroundColor: '#3E4F4A',
       alignItems: 'center',
       justifyContent: 'center',
-    }
+    },
+    buttonText: {
+      color: 'white',
+      textAlign: 'center',
+      fontSize: 25,
+    },
   }
 );
